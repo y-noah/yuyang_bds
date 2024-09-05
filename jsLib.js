@@ -9,7 +9,6 @@ let person = {
 };
 console.log(person.name); // 输出: Alice
 person.greet(); // 输出: Hello, Alice
-
 let keys = Object.keys(person); // ["name", "age", "greet"]
 let values = Object.values(person); // ["Alice", 25, function() {...}]
 console.log(keys); // 输出: ["name", "age", "greet"]
@@ -26,11 +25,9 @@ Object.defineProperty(obj, "name", {
 	enumerable: true, // 可枚举
 	configurable: false // 不可重新定义
 });
-
 console.log(obj.name); // 输出: Bob
 obj.name = "Alice"; // 修改无效
 console.log(obj.name); // 仍然输出: Bob
-
 let descriptor = Object.getOwnPropertyDescriptor(obj, "name");
 console.log(descriptor);
 // 输出: { value: "Bob", writable: false, enumerable: true, configurable: false }
@@ -41,7 +38,6 @@ console.log(descriptor);
 // Array 对象用于存储有序的数据列表，提供了多种方法操作数组。
 let fruits = ["Apple", "Banana", "Cherry"];
 console.log(fruits[0]); // 输出: Apple
-
 fruits.push("Durian"); // 添加元素到数组末尾
 console.log(fruits); // 输出: ["Apple", "Banana", "Cherry", "Durian"]
 let first = fruits.shift(); // 移除第一个元素
@@ -56,10 +52,8 @@ console.log(sortedFruits); // 输出: ["Banana", "Cherry", "Durian"]
 // 包装对象包括 Boolean、Number 和 String，它们将原始数据类型转换为对象，以便可以使用相应的方法。
 let isTrue = new Boolean(true);
 console.log(isTrue.valueOf()); // 输出: true
-
 let num = new Number(42);
 console.log(num.toFixed(2)); // 输出: "42.00"
-
 let str = new String("hello");
 console.log(str.toUpperCase()); // 输出: "HELLO"
 
@@ -82,10 +76,8 @@ let now = new Date();
 console.log(now); // 输出当前日期和时间
 let specificDate = new Date(2024, 8, 3);
 console.log(specificDate); // 输出: Wed Sep 03 2024 00:00:00 GMT+0000
-
 let year = now.getFullYear();
 console.log(year); // 输出: 当前年份
-
 let hours = now.getHours();
 console.log(hours); // 输出: 当前小时数
 
@@ -96,7 +88,6 @@ console.log(hours); // 输出: 当前小时数
 let regex = /hello/i; // i 表示忽略大小写
 let result = regex.test("Hello World");
 console.log(result); // 输出: true
-
 let str = "The quick brown fox jumps over the lazy dog.";
 let matches = str.match(/the/gi);
 console.log(matches); // 输出: ["The", "the"]
@@ -108,6 +99,5 @@ console.log(matches); // 输出: ["The", "the"]
 let obj = { name: "Alice", age: 25 };
 let jsonString = JSON.stringify(obj);
 console.log(jsonString); // 输出: '{"name":"Alice","age":25}'
-
 let parsedObj = JSON.parse(jsonString);
 console.log(parsedObj.name); // 输出: Alice
